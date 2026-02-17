@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow & Grace Beauty Studio | Delhi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS VARIABLES */
+        :root {
+            --primary-pink: #ff8fa3;
+            --dark-gold: #b8860b;
+            --soft-cream: #fff5f6;
+            --text-dark: #333;
+            --white: #ffffff;
+        }
+
+        /* GLOBAL STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        ul { list-style: none; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section { padding: 80px 0; }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-call { background: var(--primary-pink); color: white; }
+        .btn-whatsapp { background: #25d366; color: white; margin-left: 10px; }
+        .btn-call:hover, .btn-whatsapp:hover { opacity: 0.8; transform: translateY(-2px); }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-pink); }
+
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a:hover { color: var(--primary-pink); }
+
+        /* HERO SECTION */
+        #home {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 15px; }
+        .hero-content p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; }
+
+        /* SERVICES */
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 40px; }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            padding: 30px;
+            border-radius: 15px;
+            background: var(--soft-cream);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .service-card:hover { transform: translateY(-10px); background: #ffe4e8; }
+        .service-card i { font-size: 2.5rem; color: var(--primary-pink); margin-bottom: 15px; }
+
+        /* WHY CHOOSE US */
+        #why-us { background: #fdfdfd; }
+        .features-list { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
+        .feature-item { font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .feature-item i { color: #2ecc71; }
+
+        /* GALLERY */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* ABOUT */
+        #about { background-color: var(--soft-cream); text-align: center; }
+        .about-text { max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
+
+        /* CONTACT & MAP */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .map-box iframe { width: 100%; border-radius: 15px; height: 350px; }
+
+        /* FORM */
+        .booking-form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--primary-pink);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Mobile menu simplified for code length */
+            .contact-container { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">🌸 Glow & Grace</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="tel:9282XXXXXX" class="btn btn-call"><i class="fa fa-phone"></i> Call Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container hero-content">
+            <h1>✨ Where Beauty Meets Elegance</h1>
+            <p>Premium beauty services designed to enhance your natural glow — for weddings, parties, and everyday confidence.</p>
+            <div class="hero-btns">
+                <a href="tel:9282XXXXXX" class="btn btn-call">📞 Call Now: 9282XXXXXX</a>
+                <a href="https://wa.me/919282XXXXXX" class="btn btn-whatsapp">📲 Book on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Signature Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-gem"></i>
+                    <h3>Bridal Makeup</h3>
+                    <p>Flawless, long-lasting bridal looks crafted to match your style and occasion.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-magic"></i>
+                    <h3>Party Makeup</h3>
+                    <p>Glamorous makeup for parties, events, and special celebrations.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-cut"></i>
+                    <h3>Hair Styling & Spa</h3>
+                    <p>Trendy hairstyles and nourishing treatments for healthy, shiny hair.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-spa"></i>
+                    <h3>Facial & Cleanup</h3>
+                    <p>Deep cleansing and glow-boosting skincare for all skin types.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <h3>Manicure & Pedicure</h3>
+                    <p>Complete hand and foot care for a polished look.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-female"></i>
+                    <h3>Waxing & Threading</h3>
+                    <p>Gentle and hygienic hair removal services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us">
+        <div class="container">
+            <h2 class="section-title">Why Clients Love Glow & Grace</h2>
+            <div class="features-list">
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Professional Beauticians</div>
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Premium Products</div>
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Hygienic Environment</div>
+                <div class="feature-item"><i class="fas fa-check-circle"></i> Affordable Pricing</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Work</h2>
+            <p style="text-align:center; margin-bottom:30px;">Every look is created with precision, passion, and perfection.</p>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=600" alt="Bridal Makeup">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=600" alt="Salon Interior">
+                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=600" alt="Hair Styling">
+                <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=600" alt="Party Look">
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Glow & Grace Beauty Studio</h2>
+            <div class="about-text">
+                <p>Glow & Grace Beauty Studio is a Delhi-based beauty studio offering professional makeup and beauty services for women. We believe beauty should feel effortless, elegant, and empowering.</p><br>
+                <p>From bridal transformations to everyday beauty care, our goal is to deliver personalized services that make you look and feel your best.</p><br>
+                <p><strong>📍 Based in Delhi, serving clients across India.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="map-box">
+                    <p>📞 <strong>Call:</strong> 9282XXXXXX</p>
+                    <p>📧 <strong>Email:</strong> ganesharambhloans@gmail.com</p>
+                    <p>📍 <strong>Location:</strong> Delhi, India</p><br>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.8392319277!2d77.06889754725782!3d28.527280343993736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204d!2sDelhi!5e0!3m2!1sen!2sin!4v1715678901234!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <div class="booking-form">
+                    <h3>✨ Book Your Appointment</h3>
+                    <p>Fill the details below and we’ll get back to you shortly.</p><br>
+                    <form>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="10-digit mobile number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Select Service</label>
+                            <select required>
+                                <option value="">-- Choose a Service --</option>
+                                <option>Bridal Makeup</option>
+                                <option>Party Makeup</option>
+                                <option>Hair Styling / Hair Spa</option>
+                                <option>Facial & Cleanup</option>
+                                <option>Waxing & Threading</option>
+                                <option>Manicure & Pedicure</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Appointment Date</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message (Optional)</label>
+                            <textarea rows="3" placeholder="Any special requirement or timing preference"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Appointment Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Glow & Grace Beauty Studio</p>
+            <p>Designed with ❤️</p>
+        </div>
+    </footer>
+
+</body>
+  </html>
