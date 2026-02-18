@@ -1,213 +1,707 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow & Grace | Beauty Studio Delhi</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow & Grace Beauty Studio | Delhi</title>
 
-    <style>
-        :root {
-            --primary: #ff4d8d;
-            --gold: #d4af37;
-            --bg-light: #ffffff;
-            --bg-soft: #fffafa;
-            --text-dark: #1a1a1a;
-            --text-grey: #555555;
-        }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; background: var(--bg-light); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        h1, h2, h3 { font-family: 'Syne', sans-serif; text-transform: uppercase; }
+<style>
+:root{
+  --pink:#ff8fa3;
+  --dark:#333;
+  --light:#fff5f7;
+}
 
-        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 
-        /* --- STICKY HEADER --- */
-        header {
-            position: fixed;
-            top: 0; width: 100%;
-            padding: 15px 0;
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            z-index: 1000;
-        }
-        nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.3rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
-        
-        .nav-links { display: none; } /* Desktop links */
-        .call-btn-nav { background: var(--primary); color: white; padding: 8px 15px; border-radius: 50px; text-decoration: none; font-size: 0.8rem; font-weight: 600; }
+body{
+  font-family:'Poppins',sans-serif;
+  color:var(--dark);
+  background:#fff;
+}
 
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1600');
-            background-size: cover;
-            background-position: center;
-            padding-top: 60px;
-        }
-        .hero-content h1 { font-size: clamp(2.2rem, 10vw, 4.5rem); color: var(--text-dark); margin-bottom: 15px; line-height: 1.1; }
-        .hero-content h1 span { color: var(--primary); }
-        .hero-content p { font-size: 1rem; color: var(--text-grey); max-width: 500px; margin: 0 auto 30px; }
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+}
 
-        .btn-group { display: flex; flex-direction: column; gap: 15px; align-items: center; }
-        .btn { padding: 14px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; width: 250px; transition: 0.3s; text-align: center; }
-        .btn-pink { background: var(--primary); color: white; border: none; }
-        .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: white; }
+section{padding:80px 0}
+.container{width:90%;max-width:1200px;margin:auto}
 
-        /* --- SERVICES (BENTO LIGHT) --- */
-        section { padding: 80px 0; }
-        .section-title { text-align: center; font-size: 2rem; margin-bottom: 40px; color: var(--primary); position: relative; }
-        .section-title::after { content: ''; width: 50px; height: 3px; background: var(--gold); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  z-index:1000;
+}
 
-        .bento-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
-        .bento-card { background: var(--bg-soft); padding: 30px; border-radius: 25px; border: 1px solid #f0f0f0; transition: 0.3s; }
-        .bento-card i { font-size: 2rem; color: var(--primary); margin-bottom: 15px; }
-        .bento-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-        .bento-card p { font-size: 0.9rem; color: var(--text-grey); }
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 0;
+}
 
-        /* --- GALLERY --- */
-        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .gallery-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; }
+.logo{
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--pink);
+}
 
-        /* --- ABOUT --- */
-        .about-box { background: var(--bg-soft); padding: 40px 20px; border-radius: 30px; text-align: center; }
+.nav-links{
+  display:flex;
+  gap:20px;
+}
 
-        /* --- CONTACT & MAP --- */
-        .contact-info { margin-bottom: 30px; text-align: center; }
-        .map-box iframe { width: 100%; height: 250px; border-radius: 20px; border: 1px solid #eee; margin-top: 20px; }
+.nav-links a{
+  font-weight:500;
+}
 
-        /* --- FORM --- */
-        .form-card { background: white; padding: 35px 25px; border-radius: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #f0f0f0; }
-        input, select, textarea { width: 100%; padding: 14px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 12px; font-family: inherit; }
+.nav-links a:hover{color:var(--pink)}
 
-        /* --- FLOATING WHATSAPP --- */
-        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25d366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.call-btn{
+  background:var(--pink);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:25px;
+  font-size:.9rem;
+}
 
-        /* --- DESKTOP VIEW --- */
-        @media (min-width: 768px) {
-            .nav-links { display: flex; gap: 20px; }
-            .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.9rem; }
-            .bento-grid { grid-template-columns: repeat(3, 1fr); }
-            .gallery-grid { grid-template-columns: repeat(4, 1fr); }
-            .btn-group { flex-direction: row; }
-            .hero-content h1 { font-size: 4.5rem; }
-        }
-    </style>
+/* HERO */
+#home{
+  height:90vh;
+  background:
+  linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+  url("https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1600&auto=format&fit=crop");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  color:#fff;
+}
+
+.hero h1{
+  font-size:3.2rem;
+  margin-bottom:15px;
+  animation:fadeUp 1s;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  margin-bottom:30px;
+  animation:fadeUp 1.4s;
+}
+
+.hero-buttons a{
+  display:inline-block;
+  margin:5px;
+  padding:12px 25px;
+  border-radius:30px;
+  color:#fff;
+  font-weight:500;
+}
+
+.call{background:var(--pink)}
+.whatsapp{background:#25d366}
+
+/* SERVICES */
+.section-title{
+  text-align:center;
+  font-size:2.4rem;
+  margin-bottom:40px;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:var(--light);
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+  transition:.4s;
+}
+
+.card:hover{transform:translateY(-10px)}
+
+.card i{
+  font-size:2.5rem;
+  color:var(--pink);
+  margin-bottom:15px;
+}
+
+/* WHY US */
+#why{background:#fafafa}
+.why-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.why-item{
+  font-weight:500;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+
+.gallery img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+/* ABOUT */
+#about{
+  background:var(--light);
+  text-align:center;
+}
+
+.about-text{
+  max-width:800px;
+  margin:auto;
+  font-size:1.05rem;
+}
+
+/* CONTACT */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+iframe{
+  width:100%;
+  height:350px;
+  border-radius:15px;
+}
+
+/* FORM */
+form{
+  background:#fff;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+input,select,textarea,button{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  font-family:inherit;
+}
+
+button{
+  background:var(--pink);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  background:#333;
+  color:#fff;
+  text-align:center;
+  padding:25px;
+}
+
+/* FLOATING WHATSAPP */
+.float-wp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:#fff;
+  padding:15px;
+  border-radius:50%;
+  font-size:1.5rem;
+  z-index:2000;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:none}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2.2rem}
+}
+</style>
 </head>
+
 <body>
 
-    <a href="https://wa.me/919282XXXXXX" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+<header>
+  <nav class="container">
+    <div class="logo">🌸 Glow & Grace</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="call-btn" href="tel:9282XXXXXX">Call Now</a>
+  </nav>
+</header>
 
-    <header>
-        <div class="container nav">
-            <div class="logo">GLOW & GRACE</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <a href="tel:9282XXXXXX" class="call-btn-nav">Call Now</a>
-        </div>
-    </header>
+<section id="home">
+  <div class="container hero">
+    <h1>✨ Where Beauty Meets Elegance</h1>
+    <p>Premium beauty services designed to enhance your natural glow — for weddings, parties, and everyday confidence.</p>
+    <div class="hero-buttons">
+      <a class="call" href="tel:9282XXXXXX">📞 Call Now</a>
+      <a class="whatsapp" href="https://wa.me/919282XXXXXX">📲 Book on WhatsApp</a>
+    </div>
+  </div>
+</section>
 
-    <section id="home" class="hero">
-        <div class="container hero-content" data-aos="fade-up">
-            <h1>WHERE BEAUTY<br>MEETS <span>ELEGANCE</span></h1>
-            <p>Premium beauty services in Delhi designed to enhance your natural glow for weddings and parties.</p>
-            <div class="btn-group">
-                <a href="tel:9282XXXXXX" class="btn btn-pink">📞 9282XXXXXX</a>
-                <a href="https://wa.me/919282XXXXXX" class="btn btn-outline">📲 WhatsApp Book</a>
-            </div>
-        </div>
-    </section>
+<section id="services" class="container">
+  <h2 class="section-title">Our Signature Services</h2>
+  <div class="services">
+    <div class="card"><i class="fa-solid fa-gem"></i><h3>Bridal Makeup</h3><p>Flawless, long-lasting bridal looks.</p></div>
+    <div class="card"><i class="fa-solid fa-magic"></i><h3>Party Makeup</h3><p>Glamorous looks for every event.</p></div>
+    <div class="card"><i class="fa-solid fa-scissors"></i><h3>Hair Styling & Spa</h3><p>Healthy, shiny & styled hair.</p></div>
+    <div class="card"><i class="fa-solid fa-spa"></i><h3>Facial & Cleanup</h3><p>Glow-boosting skin treatments.</p></div>
+    <div class="card"><i class="fa-solid fa-hand-sparkles"></i><h3>Manicure & Pedicure</h3><p>Perfectly polished hands & feet.</p></div>
+    <div class="card"><i class="fa-solid fa-user"></i><h3>Waxing & Threading</h3><p>Gentle & hygienic services.</p></div>
+  </div>
+</section>
 
-    <section id="services">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Our Services</h2>
-            <div class="bento-grid">
-                <div class="bento-card" data-aos="zoom-in">
-                    <i class="fas fa-gem"></i>
-                    <h3>Bridal Makeup</h3>
-                    <p>Signature long-lasting bridal looks for your big day.</p>
-                </div>
-                <div class="bento-card" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fas fa-magic"></i>
-                    <h3>Party Glam</h3>
-                    <p>Perfect makeup for weddings and special events.</p>
-                </div>
-                <div class="bento-card" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-spa"></i>
-                    <h3>Skin & Hair</h3>
-                    <p>Rejuvenating facials and trendy hair styling.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="gallery" class="container">
+  <h2 class="section-title">Our Work</h2>
+  <p style="text-align:center;margin-bottom:25px">Every look is created with precision, passion, and perfection.</p>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f">
+    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df">
+    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796">
+  </div>
+</section>
 
-    <section id="gallery" style="background: var(--bg-soft);">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Our Work</h2>
-            <div class="gallery-grid">
-                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=600" data-aos="flip-left">
-                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=600" data-aos="flip-left" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=600" data-aos="flip-left" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=600" data-aos="flip-left" data-aos-delay="300">
-            </div>
-        </div>
-    </section>
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Glow & Grace Beauty Studio</h2>
+    <div class="about-text">
+      <p>Glow & Grace Beauty Studio is a Delhi-based beauty studio offering professional makeup and beauty services for women.</p><br>
+      <p>From bridal transformations to everyday beauty care, our goal is to deliver personalized services that make you look and feel your best.</p><br>
+      <strong>📍 Based in Delhi, serving clients across India.</strong>
+    </div>
+  </div>
+</section>
 
-    <section id="about">
-        <div class="container">
-            <div class="about-box" data-aos="fade-up">
-                <h2 style="color: var(--primary); margin-bottom: 20px;">About Glow & Grace</h2>
-                <p>We are a Delhi-based beauty studio specializing in premium makeup. We believe beauty should be effortless and empowering for every woman.</p>
-            </div>
-        </div>
-    </section>
+<section id="contact" class="container">
+  <h2 class="section-title">Get in Touch</h2>
+  <div class="contact-grid">
+    <div>
+      <p>📞 Call: 9282XXXXXX</p>
+      <p>📧 Email: ganesharambhloans@gmail.com</p>
+      <p>📍 Location: Delhi</p><br>
+      <iframe src="https://www.google.com/maps?q=Delhi&output=embed"></iframe>
+    </div>
 
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Book Appointment</h2>
-            <div class="contact-info">
-                <p>📍 Delhi | 📧 ganesharambhloans@gmail.com</p>
-                <div class="form-card" data-aos="zoom-in">
-                    <form action="https://formspree.io/f/xbdaklqa" method="POST">
-                        <input type="text" name="name" placeholder="Full Name" required>
-                        <input type="tel" name="phone" placeholder="Phone Number" required>
-                        <select name="service">
-                            <option>Bridal Makeup</option>
-                            <option>Party Makeup</option>
-                            <option>Hair Styling</option>
-                        </select>
-                        <input type="date" name="date">
-                        <button type="submit" class="btn btn-pink" style="width: 100%;">Submit Request</button>
-                    </form>
-                </div>
-                <div class="map-box">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.06889754725782!3d28.527280343115463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x37205b7153266281!2sDelhi!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+    <form action="https://formspree.io/f/xbdaklqa" method="POST">
+      <h3>✨ Book Your Appointment</h3>
+      <p>Fill the details below and we’ll get back to you shortly.</p><br>
+      <input name="name" placeholder="Your Name" required>
+      <input name="phone" placeholder="10-digit mobile number" required>
+      <select name="service" required>
+        <option value="">Select Service</option>
+        <option>Bridal Makeup</option>
+        <option>Party Makeup</option>
+        <option>Hair Styling / Hair Spa</option>
+        <option>Facial & Cleanup</option>
+        <option>Waxing & Threading</option>
+        <option>Manicure & Pedicure</option>
+      </select>
+      <input type="date" name="date" required>
+      <textarea name="message" placeholder="Any special requirement or timing preference"></textarea>
+      <button type="submit">Submit Appointment Request</button>
+    </form>
+  </div>
+</section>
 
-    <footer style="text-align: center; padding: 40px; border-top: 1px solid #eee; font-size: 0.8rem; color: #999;">
-        <p>© 2026 Glow & Grace Beauty Studio | Designed with ❤️</p>
-    </footer>
+<footer>
+  © 2026 Glow & Grace Beauty Studio <br> Designed with ❤️
+</footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+<a class="float-wp" href="https://wa.me/919282XXXXXX"><i class="fab fa-whatsapp"></i></a>
+
 </body>
-    </html>
+        </html>!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow & Grace Beauty Studio | Delhi</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --pink:#ff8fa3;
+  --dark:#333;
+  --light:#fff5f7;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+
+body{
+  font-family:'Poppins',sans-serif;
+  color:var(--dark);
+  background:#fff;
+}
+
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+}
+
+section{padding:80px 0}
+.container{width:90%;max-width:1200px;margin:auto}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.08);
+  z-index:1000;
+}
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 0;
+}
+
+.logo{
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--pink);
+}
+
+.nav-links{
+  display:flex;
+  gap:20px;
+}
+
+.nav-links a{
+  font-weight:500;
+}
+
+.nav-links a:hover{color:var(--pink)}
+
+.call-btn{
+  background:var(--pink);
+  color:#fff;
+  padding:10px 18px;
+  border-radius:25px;
+  font-size:.9rem;
+}
+
+/* HERO */
+#home{
+  height:90vh;
+  background:
+  linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+  url("https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1600&auto=format&fit=crop");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  text-align:center;
+  color:#fff;
+}
+
+.hero h1{
+  font-size:3.2rem;
+  margin-bottom:15px;
+  animation:fadeUp 1s;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  margin-bottom:30px;
+  animation:fadeUp 1.4s;
+}
+
+.hero-buttons a{
+  display:inline-block;
+  margin:5px;
+  padding:12px 25px;
+  border-radius:30px;
+  color:#fff;
+  font-weight:500;
+}
+
+.call{background:var(--pink)}
+.whatsapp{background:#25d366}
+
+/* SERVICES */
+.section-title{
+  text-align:center;
+  font-size:2.4rem;
+  margin-bottom:40px;
+}
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:var(--light);
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+  transition:.4s;
+}
+
+.card:hover{transform:translateY(-10px)}
+
+.card i{
+  font-size:2.5rem;
+  color:var(--pink);
+  margin-bottom:15px;
+}
+
+/* WHY US */
+#why{background:#fafafa}
+.why-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.why-item{
+  font-weight:500;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+
+.gallery img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+/* ABOUT */
+#about{
+  background:var(--light);
+  text-align:center;
+}
+
+.about-text{
+  max-width:800px;
+  margin:auto;
+  font-size:1.05rem;
+}
+
+/* CONTACT */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+iframe{
+  width:100%;
+  height:350px;
+  border-radius:15px;
+}
+
+/* FORM */
+form{
+  background:#fff;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+input,select,textarea,button{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  font-family:inherit;
+}
+
+button{
+  background:var(--pink);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  background:#333;
+  color:#fff;
+  text-align:center;
+  padding:25px;
+}
+
+/* FLOATING WHATSAPP */
+.float-wp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:#fff;
+  padding:15px;
+  border-radius:50%;
+  font-size:1.5rem;
+  z-index:2000;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:none}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .contact-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2.2rem}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="container">
+    <div class="logo">🌸 Glow & Grace</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="call-btn" href="tel:9282XXXXXX">Call Now</a>
+  </nav>
+</header>
+
+<section id="home">
+  <div class="container hero">
+    <h1>✨ Where Beauty Meets Elegance</h1>
+    <p>Premium beauty services designed to enhance your natural glow — for weddings, parties, and everyday confidence.</p>
+    <div class="hero-buttons">
+      <a class="call" href="tel:9282XXXXXX">📞 Call Now</a>
+      <a class="whatsapp" href="https://wa.me/919282XXXXXX">📲 Book on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="container">
+  <h2 class="section-title">Our Signature Services</h2>
+  <div class="services">
+    <div class="card"><i class="fa-solid fa-gem"></i><h3>Bridal Makeup</h3><p>Flawless, long-lasting bridal looks.</p></div>
+    <div class="card"><i class="fa-solid fa-magic"></i><h3>Party Makeup</h3><p>Glamorous looks for every event.</p></div>
+    <div class="card"><i class="fa-solid fa-scissors"></i><h3>Hair Styling & Spa</h3><p>Healthy, shiny & styled hair.</p></div>
+    <div class="card"><i class="fa-solid fa-spa"></i><h3>Facial & Cleanup</h3><p>Glow-boosting skin treatments.</p></div>
+    <div class="card"><i class="fa-solid fa-hand-sparkles"></i><h3>Manicure & Pedicure</h3><p>Perfectly polished hands & feet.</p></div>
+    <div class="card"><i class="fa-solid fa-user"></i><h3>Waxing & Threading</h3><p>Gentle & hygienic services.</p></div>
+  </div>
+</section>
+
+<section id="gallery" class="container">
+  <h2 class="section-title">Our Work</h2>
+  <p style="text-align:center;margin-bottom:25px">Every look is created with precision, passion, and perfection.</p>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f">
+    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df">
+    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796">
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Glow & Grace Beauty Studio</h2>
+    <div class="about-text">
+      <p>Glow & Grace Beauty Studio is a Delhi-based beauty studio offering professional makeup and beauty services for women.</p><br>
+      <p>From bridal transformations to everyday beauty care, our goal is to deliver personalized services that make you look and feel your best.</p><br>
+      <strong>📍 Based in Delhi, serving clients across India.</strong>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <h2 class="section-title">Get in Touch</h2>
+  <div class="contact-grid">
+    <div>
+      <p>📞 Call: 9282XXXXXX</p>
+      <p>📧 Email: ganesharambhloans@gmail.com</p>
+      <p>📍 Location: Delhi</p><br>
+      <iframe src="https://www.google.com/maps?q=Delhi&output=embed"></iframe>
+    </div>
+
+    <form action="https://formspree.io/f/xbdaklqa" method="POST">
+      <h3>✨ Book Your Appointment</h3>
+      <p>Fill the details below and we’ll get back to you shortly.</p><br>
+      <input name="name" placeholder="Your Name" required>
+      <input name="phone" placeholder="10-digit mobile number" required>
+      <select name="service" required>
+        <option value="">Select Service</option>
+        <option>Bridal Makeup</option>
+        <option>Party Makeup</option>
+        <option>Hair Styling / Hair Spa</option>
+        <option>Facial & Cleanup</option>
+        <option>Waxing & Threading</option>
+        <option>Manicure & Pedicure</option>
+      </select>
+      <input type="date" name="date" required>
+      <textarea name="message" placeholder="Any special requirement or timing preference"></textarea>
+      <button type="submit">Submit Appointment Request</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 Glow & Grace Beauty Studio <br> Designed with ❤️
+</footer>
+
+<a class="float-wp" href="https://wa.me/919282XXXXXX"><i class="fab fa-whatsapp"></i></a>
+
+</body>
+</html>
